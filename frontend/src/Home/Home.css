@@ -1,110 +1,120 @@
+/* Light Mode Stylish HomePage.css */
+
 body {
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f5f7fa;
+  background: radial-gradient(circle at top, #ffffff, #f0f4ff);
   color: #333333;
-  font-family: Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
+/* 3D Animated Background */
 .main-content {
   text-align: center;
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #cfd8f9, #d8e6ff, #bee0ff, #a9c3ff);
-  background-size: 400% 400%;
-  animation: waveGradient 10s ease-in-out infinite;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin: 60px auto;
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   width: 80%;
   max-width: 900px;
+  margin: 50px auto;
+  transform: perspective(1000px) rotateX(5deg);
+  transition: transform 0.5s ease-in-out;
 }
 
-@keyframes waveGradient {
+.main-content:hover {
+  transform: perspective(1000px) rotateX(0deg) scale(1.02);
+}
+
+@keyframes floating {
   0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 50%;
+    transform: translateY(0);
   }
   50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 50%;
+    transform: translateY(-10px);
   }
   100% {
-    background-position: 0% 50%;
+    transform: translateY(0);
   }
 }
 
 h2 {
-  color: #2c3e50;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #567df4, #9e86ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .intro-text {
-  font-size: 1.1rem;
-  color: #4f5b66;
+  font-size: 1.2rem;
+  color: #555555;
   margin: 20px 0;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
-.button-container {
-  margin-top: 30px;
-}
-
+/* Soft Neon Button */
 button {
-  background: linear-gradient(135deg, #007BFF, #0056b3);
+  background: linear-gradient(135deg, #00aaff, #6699ff);
   color: white;
-  font-size: 1.1rem;
-  padding: 15px 30px;
+  font-size: 1.2rem;
+  padding: 15px 35px;
   border: none;
-  border-radius: 30px; /* Rounded edges */
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(102, 153, 255, 0.5);
 }
 
 button:hover {
-  background: linear-gradient(135deg, #0056b3, #003f7f);
-  transform: scale(1.05);
+  background: linear-gradient(135deg, #6699ff, #00aaff);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(102, 153, 255, 0.8);
 }
 
 button:active {
-  background: linear-gradient(135deg, #003f7f, #002c5f);
-  transform: scale(1);
+  transform: scale(0.98);
 }
 
+/* Glassmorphic FAQ Section */
 .faq {
-  margin-top: 50px;
-  padding: 20px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   width: 80%;
   max-width: 900px;
-  margin: 40px auto;
+  margin: 50px auto;
 }
 
 h3 {
-  color: #2c3e50;
-  font-size: 1.8rem;
-  margin-bottom: 15px;
+  font-size: 2rem;
+  color: #333333;
 }
 
 details {
-  margin: 10px 0;
-  background-color: #f4f6fb;
-  padding: 15px;
-  border-radius: 5px;
+  margin: 15px 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+details:hover {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 summary {
   font-weight: bold;
   cursor: pointer;
+  color: #567df4;
 }
 
 details p {
   margin-top: 10px;
-  color: #607d8b;
+  color: #555555;
 }
